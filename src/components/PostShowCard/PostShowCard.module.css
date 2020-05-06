@@ -2,6 +2,13 @@
     margin: 30rem 0;
     max-width: 1100rem;
 }
+.TicketsPost a {
+    text-decoration: none;
+    color: rgb(137, 81, 8);
+}
+.TicketsPost a:hover {
+    color: rgb(84, 50, 6);
+}
 .TicketsPost p {
     margin: 0;
     padding-top: 40rem;

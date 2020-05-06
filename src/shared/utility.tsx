@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const updateObject = (oldObject: object, updatedProperties: any) => {
     return {
         ...oldObject,
@@ -150,3 +152,13 @@ export const limitTitle = (title: string, limit: number) => {
 
     return title;
 };
+// LINKIFY CUSTOM SETUP
+const textDecoration = (text: string): string => {
+    text = text.includes('@') ? text : 'nuoroda';
+    return text;
+};
+export const componentDecorator = (href: string, text: string, key: number) => (
+    <a href={href} key={key} target="_blank" rel="noopener noreferrer">
+        {textDecoration(text)}
+    </a>
+);

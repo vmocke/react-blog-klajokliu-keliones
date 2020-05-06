@@ -35,6 +35,13 @@
 }
 .PostsDesc a {
     text-decoration: none;
+    color: rgb(137, 81, 8);
+}
+.PostsDesc a:hover {
+    color: rgb(84, 50, 6);
+}
+.PostsDescRead {
+    text-decoration: none;
     border: 0 solid #eee;
     color: black;
     padding: 10rem 45rem;
@@ -42,7 +49,7 @@
     letter-spacing: 2rem;
     box-shadow: 0 0.8rem 5rem 2rem rgba(101, 90, 86, 0.245);
 }
-.PostsDesc a:hover {
+.PostsDescRead:hover {
     background: rgb(233, 233, 233);
     color: rgb(137, 81, 8);
 }
