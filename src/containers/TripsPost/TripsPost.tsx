@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import classes from './Trips.module.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actionsTrips from '../../store/actions/actionsTrips';
 import { AppState } from '../..';
@@ -10,9 +10,11 @@ import PageTopTwoLines from '../../components/PageTopTwoLines/PageTopTwoLines';
 
 const TripsPost = () => {
     const { id } = useParams();
+    const { push } = useHistory();
     const [show, setShow]: any[] = useState([]);
 
     const trips = useSelector((state: AppState) => state.reducerTrips.trips);
+    const error = useSelector((state: AppState) => state.reducerTrips.error);
 
     const dispatch = useDispatch();
     const on_Ticekts_Post_Server_Search = useCallback(
@@ -39,12 +41,12 @@ const TripsPost = () => {
                 // TRIPS POST SEARCH SERVER
                 on_Ticekts_Post_Server_Search(id);
             } else {
-                console.error('error posts tickets');
+                console.error('Klaida...');
             }
         }
     }, [on_Ticekts_Post_Server_Search, trips, id, on_Trips_Post_Get_Extra_Content]);
 
-    let postToShow =
+    const postToShow =
         show &&
         show.map((item: any) => (
             <PostShowCard
@@ -57,11 +59,23 @@ const TripsPost = () => {
             />
         ));
 
+    const redirecting = (
+        <React.Fragment>
+            <h1>{error.message}</h1>
+            {setTimeout(() => {
+                if (error) {
+                    push('/home/0');
+                }
+            }, 5000)}
+        </React.Fragment>
+    );
+
     return (
         <div className={classes.TripsPostPage}>
             <HeaderSpacer />
             <PageTopTwoLines />
             {postToShow}
+            {error && redirecting}
         </div>
     );
 };

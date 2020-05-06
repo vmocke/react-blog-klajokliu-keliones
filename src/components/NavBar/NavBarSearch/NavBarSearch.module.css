@@ -16,7 +16,6 @@
     background-repeat: no-repeat;
     padding: 5rem 35rem 0 0;
     transition: width 0.4s ease-in;
-    transition: width 0.4s ease-in;
     background: inherit;
 }
 .NavBarSearchInput::placeholder {

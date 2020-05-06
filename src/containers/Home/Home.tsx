@@ -34,6 +34,12 @@ const Home = () => {
         if (trips.length === 0 && tickets.length === 0 && page && parseInt(page) !== 0) {
             push(`home/0`);
         }
+        if (trips.length === 5 && tickets.length === 0) {
+            on_Home_Page_Reload_Tickets_Handler();
+        }
+        if (trips.length === 0 && tickets.length === 5) {
+            on_Home_Page_Reload_Trips_Handler();
+        }
     }, [
         on_Home_Page_Reload_Tickets_Handler,
         on_Home_Page_Reload_Trips_Handler,

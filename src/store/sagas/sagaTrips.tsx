@@ -52,7 +52,7 @@ export function* onTripsPostServerSearchSaga(urlId: { type: string; urlId: strin
                 if (doc.exists) {
                     Object.assign(post, doc.data());
                 } else {
-                    throw Error(`tripsPost not found: ${id}`);
+                    throw Error(`Toks postas nerastas: ${id}.`);
                 }
             });
         yield tripsRef

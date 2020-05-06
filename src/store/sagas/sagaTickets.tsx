@@ -1,6 +1,7 @@
 import { put } from 'redux-saga/effects';
 import firebase from '../../firebase';
 import * as actionsTickets from '../actions/actionsTickets';
+import descBackground from '../../assets/img/ticketsImg/descBackground.png';
 
 const db = firebase.firestore();
 const ticketsPostsRef = db.collection('ticketsPosts');
@@ -8,17 +9,20 @@ const ticketsPostsRef = db.collection('ticketsPosts');
 export function* onGetTicketsDataSaga() {
     try {
         const tickets: {}[] = [];
+        const ticketsObjBackground: any = {};
         let ticketsBackground: any | string;
 
         yield ticketsPostsRef
-            .orderBy('backgroundImg')
+            .doc('ticketsBackground')
             .get()
-            .then((snapshot) => {
-                if (snapshot.empty) {
-                    throw Error('backgroundImg not found');
-                }
-                snapshot.forEach((doc) => (ticketsBackground = doc.data().backgroundImg));
+            .then((doc) => {
+                Object.assign(ticketsObjBackground, doc.data());
+                ticketsBackground = ticketsObjBackground.backgroundImg;
             });
+        if (!ticketsBackground) {
+            ticketsBackground = `${descBackground}`;
+        }
+
         yield ticketsPostsRef
             .orderBy('date', 'desc')
             .limit(5)
@@ -67,7 +71,7 @@ export function* onTicektsPostServerSearchSaga(urlId: { type: string; urlId: str
                 if (doc.exists) {
                     Object.assign(post, doc.data());
                 } else {
-                    throw Error(`ticketsPost not found: ${id}`);
+                    throw Error(`Toks postas nerastas: ${id}.`);
                 }
             });
         yield ticketsPostsRef

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../..';
 import * as actionsTickets from '../../store/actions/actionsTickets';
@@ -7,12 +7,15 @@ import classes from './TicketsPost.module.css';
 import PageTopTwoLines from '../../components/PageTopTwoLines/PageTopTwoLines';
 import HeaderSpacer from '../../components/Header/HeaderSpacer/HeaderSpacer';
 import PostShowCard from '../../components/PostShowCard/PostShowCard';
+import { redirecting } from '../../shared/utility';
 
 const TicketsPost = () => {
     const { id } = useParams();
+    const { push } = useHistory();
     const [show, setShow]: any[] = useState([]);
 
     const tickets = useSelector((state: AppState) => state.reducerTickets.tickets);
+    const error = useSelector((state: AppState) => state.reducerTickets.error);
 
     const dispatch = useDispatch();
     const on_Ticekts_Post_Server_Search = useCallback(
@@ -39,7 +42,7 @@ const TicketsPost = () => {
                 // TICKETS POST SEARCH SERVER
                 on_Ticekts_Post_Server_Search(id);
             } else {
-                console.error('error posts tickets');
+                console.error('Klaida...');
             }
         } else {
         }
@@ -63,6 +66,7 @@ const TicketsPost = () => {
             <HeaderSpacer />
             <PageTopTwoLines />
             {postToShow}
+            {error && redirecting(error, push, 5000)}
         </div>
     );
 };

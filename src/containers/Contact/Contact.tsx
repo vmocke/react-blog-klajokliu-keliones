@@ -6,10 +6,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../..';
 import ContactInfo from '../../components/ContactInfo/ContactInfo';
 import * as actionsShopContact from '../../store/actions/actionsShopContact';
+import { redirecting } from '../../shared/utility';
+import { useHistory } from 'react-router-dom';
 
 const Contact = () => {
+    const { push } = useHistory();
     const contact = useSelector((state: AppState) => state.reducerShopContact.contact.contacts);
     const contactImgUrl = useSelector((state: AppState) => state.reducerShopContact.contact.contactImgUrl);
+    const error = useSelector((state: AppState) => state.reducerShopContact.error);
 
     const dispatch = useDispatch();
     const on_Get_Contact_Data = useCallback(() => dispatch(actionsShopContact.onGetContactData()), [dispatch]);
@@ -36,6 +40,7 @@ const Contact = () => {
         <div className={classes.ContactDiv}>
             <HeaderSpacer />
             <PageTopTwoLines />
+            {error && redirecting(error, push, 5000)}
             <div className={classes.Contact}>
                 <div className={classes.ContactInfo}>
                     <div className={classes.ContactInfoHeader}>

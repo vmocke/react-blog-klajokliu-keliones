@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../..';
 import { useRouteMatch, useParams, useHistory } from 'react-router-dom';
 import PostsPages from '../../components/Home/PostsPages/PostsPages';
+import { redirecting } from '../../shared/utility';
 
 const Tickets = () => {
     const { url } = useRouteMatch();
@@ -16,6 +17,7 @@ const Tickets = () => {
 
     const tickets = useSelector((state: AppState) => state.reducerTickets.tickets);
     const ticketsBackground = useSelector((state: AppState) => state.reducerTickets.ticketsBackground);
+    const error = useSelector((state: AppState) => state.reducerTickets.error);
 
     const dispatch = useDispatch();
     const on_Get_Tickets_Data = useCallback(() => dispatch(actionsTickets.onGetTicketsData()), [dispatch]);
@@ -70,6 +72,7 @@ const Tickets = () => {
             <HeaderSpacer />
             <PageTopTwoLines />
             <div className={classes.TicketsAllCards}>{ticketsCard}</div>
+            {error && redirecting(error, push, 5000)}
             <PostsPages
                 page={page}
                 url={url}

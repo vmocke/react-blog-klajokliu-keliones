@@ -7,11 +7,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../..';
 import * as actionsShopContact from '../../store/actions/actionsShopContact';
 import ImgComp from '../../components/ImgComp/ImgComp';
+import { useHistory } from 'react-router-dom';
+import { redirecting } from '../../shared/utility';
 
 const Shop = () => {
+    const { push } = useHistory();
     const imgs = useSelector((state: AppState) => state.reducerShopContact.shop.headerImgs.imgs);
     const smallIcon = useSelector((state: AppState) => state.reducerShopContact.shop.headerImgs.smallIcon);
     const content = useSelector((state: AppState) => state.reducerShopContact.shop.content);
+    const error = useSelector((state: AppState) => state.reducerShopContact.error);
 
     const dispatch = useDispatch();
     const on_Get_Shop_Data = useCallback(() => dispatch(actionsShopContact.onGetShopData()), [dispatch]);
@@ -57,6 +61,7 @@ const Shop = () => {
                 {headerIMGS}
                 {headerIcon}
             </div>
+            {error && redirecting(error, push, 5000)}
             {shopContent}
         </div>
     );

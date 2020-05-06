@@ -8,6 +8,7 @@ import { useParams, useHistory, useRouteMatch } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../..';
 import * as actionsTrips from '../../store/actions/actionsTrips';
+import { redirecting } from '../../shared/utility';
 
 const Trips = () => {
     const { url } = useRouteMatch();
@@ -15,8 +16,9 @@ const Trips = () => {
     const { push } = useHistory();
 
     const trips = useSelector((state: AppState) => state.reducerTrips.trips);
-    const dispatch = useDispatch();
+    const error = useSelector((state: AppState) => state.reducerTrips.error);
 
+    const dispatch = useDispatch();
     const on_Get_Trips_Data = useCallback(() => dispatch(actionsTrips.onGetTripsData()), [dispatch]);
 
     useEffect(() => {
@@ -69,6 +71,7 @@ const Trips = () => {
             <HeaderSpacer />
             <PageTopTwoLines />
             <div className={classes.TripsAllCards}>{tripsPosts}</div>
+            {error && redirecting(error, push, 5000)}
             <PostsPages
                 page={page}
                 url={url}
