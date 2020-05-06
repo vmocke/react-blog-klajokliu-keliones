@@ -1,0 +1,75 @@
+.TicketsPost {
+    margin: 30rem 0;
+    max-width: 1100rem;
+}
+.TicketsPost p {
+    margin: 0;
+    padding-top: 40rem;
+    font-size: 18rem;
+    text-align: justify;
+}
+.TicketsPostMainImg {
+    position: relative;
+    max-width: 265rem;
+    max-height: 350rem;
+    margin: 0 30rem 0 0;
+    float: left;
+}
+.TicketsPostMainImg img {
+    max-width: inherit;
+    max-height: inherit;
+}
+.TicketsPostMainHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.TicketsPostMainHeader h2,
+span {
+    margin: 0;
+    font-weight: 1;
+    letter-spacing: 2rem;
+}
+.TicketsPostMainHeader span {
+    font-size: 13rem;
+}
+.TicketsPostExtraContent {
+    width: 100%;
+    padding-top: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+.PostShowExtraContentImgs div {
+    margin: 0 25rem 30rem 25rem;
+}
+.TicketsPostExtraContent h4 {
+    margin: 20rem 0 0 0;
+}
+.PostShowExtraContentImgs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+@media only screen and (max-width: 700px) {
+    .TicketsPostMainContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .TicketsPostMainImg {
+        margin: 0 0 20rem 0;
+        float: none;
+    }
+    .PostShowExtraContentImgs {
+    }
+    .PostShowExtraContentImgs div {
+        margin: 0 5rem 30rem 5rem;
+    }
+}

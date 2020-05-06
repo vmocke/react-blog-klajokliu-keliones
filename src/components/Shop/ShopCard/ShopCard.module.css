@@ -1,0 +1,143 @@
+.ShopCard {
+    position: relative;
+    border-top: 1rem solid #eee;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50rem;
+}
+.ShopCard h3,
+.ShopCard span,
+.ShopCard p {
+    margin: 0 5rem;
+    padding: 0;
+    max-width: 850rem;
+    text-align: center;
+    letter-spacing: 1rem;
+}
+.ShopCard h3 {
+    margin-top: 20rem;
+    letter-spacing: 2rem;
+    text-transform: uppercase;
+}
+.ShopCard span {
+    margin-bottom: 40rem;
+    font-size: 17rem;
+}
+.ShopCard p {
+    font-size: 20rem;
+}
+.ShopCardForm {
+    margin-top: 30rem;
+    display: flex;
+    flex-direction: column;
+}
+.FormInputDiv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.FormInputDiv span {
+    margin: 0;
+    position: absolute;
+    top: -10rem;
+    color: red;
+}
+.ShopCardForm input,
+textarea {
+    box-sizing: border-box;
+    padding: 0 10rem;
+    margin: 10rem 0;
+    border: 1rem solid black;
+    border-radius: 3rem;
+    height: 30rem;
+    width: 280rem;
+    text-align: center;
+    box-shadow: 0 0.8rem 5rem 4rem rgba(101, 90, 86, 0.245);
+}
+.ShopCardForm textarea {
+    min-height: 50rem;
+    max-height: 80rem;
+    max-width: 280rem;
+}
+/*.ShopCardForm input:nth-child(3) {
+    height: 80rem;
+}*/
+.ShopCardImg {
+    position: absolute;
+    bottom: 0;
+    left: 30rem;
+    z-index: -1;
+}
+.ShopCardImg img {
+    width: inherit;
+    height: inherit;
+}
+
+.ShopCardForm input::placeholder,
+textarea::placeholder {
+    text-align: center;
+    text-transform: uppercase;
+    color: inherit;
+    letter-spacing: 1rem;
+}
+.ShopCardEmailSent,
+.ShopCardNotAllFilled {
+    position: absolute;
+    bottom: 78rem;
+    color: green;
+}
+.ShopCardNotAllFilled {
+    color: red;
+}
+.ShopCardForm button {
+    position: relative;
+    height: 50rem;
+    width: 50rem;
+    border-radius: 40rem;
+    border: 1rem solid black;
+    background: none;
+    margin-bottom: 30rem;
+    margin-top: 20rem;
+    cursor: pointer;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.8rem 5rem 4rem rgba(101, 90, 86, 0.245);
+}
+.ShopCardForm button div {
+    background: black;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50rem;
+    margin: 0 2rem;
+}
+.ShopCardForm button span {
+    position: absolute;
+    right: -60rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15rem;
+    letter-spacing: 1rem;
+    margin: 0;
+}
+.ShopCardForm button:hover {
+    color: rgb(137, 81, 8);
+    box-shadow: 0 0.8rem 10rem 4rem rgba(101, 90, 86, 0.245);
+}
+.ShopCardForm button div:hover {
+    background: rgb(137, 81, 8);
+}
+@media only screen and (max-width: 500px) {
+    .ShopCardForm button span {
+        right: 60rem;
+    }
+    .ShopCardImg {
+        width: 100%;
+        height: 300rem;
+        left: 0;
+    }
+}

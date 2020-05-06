@@ -1,0 +1,8 @@
+.ContactInfo a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+.ContactInfo a:hover {
+    color: rgb(137, 81, 8);
+}

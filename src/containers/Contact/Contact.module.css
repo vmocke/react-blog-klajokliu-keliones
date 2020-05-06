@@ -1,0 +1,83 @@
+.ContactDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Contact {
+    height: 100%;
+    max-width: 800rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ContactInfo {
+    width: 800rem;
+    height: 600rem;
+    margin-top: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    box-shadow: 0 0.8rem 5rem 4rem rgba(101, 90, 86, 0.245);
+}
+.ContactInfoHeader {
+    max-width: 250rem;
+    display: flex;
+    align-self: flex-start;
+    margin-left: 50rem;
+}
+.ContactInfoHeaderDesc {
+    max-width: 500rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
+    margin-right: 50rem;
+}
+.ContactInfoHeaderDesc a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+.ContactInfoHeaderDesc a:hover {
+    color: rgb(137, 81, 8);
+}
+.ContactInfoHeader h1,
+h5 {
+    margin: 0;
+    font-weight: 1;
+    letter-spacing: 2rem;
+}
+.ContactImg {
+    display: flex;
+    justify-content: center;
+    height: 400rem;
+    width: 100%;
+}
+.ContactImg img {
+    height: inherit;
+    width: 100%;
+}
+@media only screen and (max-width: 815px) {
+    .ContactInfo {
+        width: 550rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .ContactInfoHeader,
+    .ContactInfoHeaderDesc {
+        margin: 0;
+        align-self: center;
+    }
+    .ContactInfo {
+        width: 100%;
+        margin-top: 20rem;
+        height: 450rem;
+    }
+    .ContactImg {
+        height: 200rem;
+    }
+}

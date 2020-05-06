@@ -1,0 +1,16 @@
+html,
+body {
+    font-size: 6.25%;
+    font-family: 'Vollkorn SC', serif;
+    margin: 0;
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+}
+body {
+    font-size: calc(15rem + 1vmin);
+}
+@media screen and (max-width: 1000px) {
+    body {
+    }
+}

@@ -1,0 +1,47 @@
+.TicketsCard {
+    position: relative;
+    height: 450rem;
+    width: 240rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30rem 40rem 0 40rem;
+    cursor: pointer;
+    border-radius: 0 0 5rem 5rem;
+}
+.TicketsCardImg {
+    height: 320rem;
+    width: inherit;
+    box-shadow: 0 0.8rem 5rem 4rem rgba(101, 90, 86, 0.245);
+    transition: all 0.3s ease-in-out;
+}
+.TicketsCardImg:hover {
+    margin: 29rem 40rem 0 40rem;
+    box-shadow: -3px 18px 20px 0px rgb(37, 37, 37);
+}
+.TicketsCardImg img {
+    height: inherit;
+    width: inherit;
+}
+.TicketsCardImgDesc {
+    max-width: 100%;
+    height: 100%;
+    padding: 5rem 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.TicketsCardImgDesc h6 {
+    background: transparent;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-weight: 1;
+}
+.DescBackground {
+    position: absolute;
+    bottom: -15rem;
+    left: 0;
+    z-index: -1;
+}

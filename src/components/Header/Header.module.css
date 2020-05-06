@@ -1,0 +1,43 @@
+.Header {
+    height: 90rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Header h1 {
+    margin: 0;
+    padding: 10rem 0;
+    text-transform: uppercase;
+    font-family: 'Lexend Giga', sans-serif;
+    font-weight: 1;
+    font-size: 40rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1rem;
+}
+.Header span {
+    height: 9rem;
+    width: 9rem;
+    margin: 0 10rem;
+    background-color: black;
+    border-radius: 50%;
+}
+@media only screen and (max-width: 700px) {
+    .Header h1 {
+        font-size: 30rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .Header {
+        flex-direction: column;
+        height: 50rem;
+    }
+    .Header h1 {
+        font-size: calc(8rem + 1vmax);
+    }
+
+    .Header span {
+        height: calc(1rem + 1vmax);
+        width: calc(1rem + 1vmax);
+    }
+}

@@ -1,0 +1,77 @@
+Admin {
+    contactPage{
+        change background foto -> contact.contactImgUrl: string (mygtukas ir nuaja nuoroda)
+        change contacts info -> contact.contacts[
+            { title: string, url: string, urltitle: string } (map pagal title(negali buti tokie patys), email(privalo buti title: "email"))
+        ]
+    },
+    shopPage{
+        change header fotos -> {
+            shop.headerImgs.imgs: string[] (trys ar daugiau topPage fotos)
+            shop.headerImgs.smallIcon: string (vienas tiktais)
+        },
+        change shop content -> {
+            shop.content: [
+                {img: string, price: string, text: string, title: string}
+            ]
+        }
+        handle emails!!! kazkaip dar padaryti ir sugalvoti!!!
+    },
+    ticketsPage{
+        change card background -> ticket.ticketsBackground: string (size: ilgis 240px aukstis 130px)
+        change ticket content -> ticket.tickets: [
+            { extraImgs: string[], imgUrl: string, text: string, title: string }
+        ]
+        add, edit, delete tickets posts, plius galimybe ideti dar viena foto i straipsni,
+        pagr foto size: ilgis 240px, aukstis 320px
+        uzdeti limita title
+        sudeti time stamp
+    },
+    tripsPage{
+        change card background -> trip.tripsBackground: string (size: ilgis 240px aukstis 130px)
+        change trips content -> trip.trips: [
+            { extraImgs: string[], imgUrl: string, text: string, title: string }
+        ]
+        add, edit, delete trips posts, plius galimybe ideti foto, kiek nori ir i kur nori,
+        pagr foto size: ilgis 240px, aukstis 320px
+        uzdeti limita title
+        sudeti time stamp
+    },
+    homePage{
+        tikriausiai nieko
+    }
+}
+client {
+    contactPage{
+        paspaudus ant nuorodu nukreipia i linkus, jei email tai atidaro windows langa
+    },
+    shopPage{
+        handle inputs and send button (kazkaip padaryti, kad tiesiai siustiu i gmail arba blogiausiu atveju i serveri(serveryje sukurti nauja doc(emails ar pan)))
+    },
+    ticketsPage{
+        paspaudus ant foto turi link i ta straipsni,
+        galbut share mygutka padaryti???
+        url butinai padaryti gerai, kad per nuoroda galetu patekti i ji patekti!!!
+        texta uzriboti po foto
+        padaryti puslapius
+        padaryti, kad nekrautu iskart visu straipsniu o tik tiek kiek telpa puslapyje
+    },
+    tripsPage{
+        paspaudus ant foto turi link i ta straipsni,
+        galbut share mygutka padaryti???
+        url butinai padaryti gerai, kad per nuoroda galetu patekti i ji patekti!!!
+        texta uzriboti po foto
+        padaryti puslapius
+        padaryti, kad nekrautu iskart visu straipsniu o tik tiek kiek telpa puslapyje
+    }
+    homePage{
+        sujungti trips ir tickets pagus ir rodyti pagal ikelimo data
+        paspaudus nuvesti link i ta straipsni
+        padaryti puslapius
+        uzriboti title ir text
+        padaryti, kad nekrautu iskart visu straipsniu o tik tiek kiek telpa puslapyje
+    }
+    navBarSearch{
+        padaryti live search arba parasta(paprastas pigiau, nes maziau reads), kad ieskotu per trips ir tickets title
+    }
+}

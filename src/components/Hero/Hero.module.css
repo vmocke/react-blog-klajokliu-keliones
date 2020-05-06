@@ -1,0 +1,7 @@
+.Hero {
+    width: 100%;
+    display: flex;
+}
+.Hero img {
+    width: 100%;
+}

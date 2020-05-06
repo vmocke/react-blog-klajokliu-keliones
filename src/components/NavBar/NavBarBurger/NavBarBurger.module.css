@@ -1,0 +1,25 @@
+.NavBarBurger {
+    width: 35rem;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10rem;
+}
+
+.NavBarBurger div {
+    width: 100%;
+    height: 2rem;
+    background-color: rgb(29, 29, 29);
+}
+.NavBarBurger:hover div {
+    background-color: rgb(137, 81, 8);
+}
+
+@media only screen and (min-width: 1251px) {
+    .NavBarBurger {
+        display: none;
+    }
+}

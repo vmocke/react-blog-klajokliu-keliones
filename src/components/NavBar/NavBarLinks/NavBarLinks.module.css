@@ -1,0 +1,30 @@
+.NavBarList {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+.NavBarList a {
+    height: 100%;
+    margin: 0 10rem;
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    font-family: 'Lexend Giga', sans-serif;
+    color: inherit;
+    font-size: 15rem;
+    text-transform: uppercase;
+}
+li > .NavBarActive,
+.NavBarList a:hover {
+    color: rgb(137, 81, 8);
+}
+/*.NavBarInactive {
+    transform: translateY(-2px);
+}
+.NavBarActive {
+    color: red;
+    border-bottom: 3px solid rgb(137, 81, 8);
+    transition: border-bottom 0.3s ease-in-out;
+}*/

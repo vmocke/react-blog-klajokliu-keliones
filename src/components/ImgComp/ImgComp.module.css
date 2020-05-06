@@ -1,0 +1,10 @@
+.ImgComp {
+    position: relative;
+    max-height: 300rem;
+    max-width: 200rem;
+    margin: 0 30rem;
+}
+.ImgComp img {
+    height: 100%;
+    width: 100%;
+}

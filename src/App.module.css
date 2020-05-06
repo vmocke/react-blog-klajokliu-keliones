@@ -1,0 +1,32 @@
+.App {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    z-index: 1;
+}
+.App main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+}
+header {
+    position: absolute;
+    top: 0;
+    left: 1%;
+    right: 1%;
+}
+nav {
+    position: absolute;
+    top: 90rem;
+    left: 1%;
+    right: 1%;
+}
+@media only screen and (max-width: 600px) {
+    nav {
+        top: 50rem;
+    }
+}
