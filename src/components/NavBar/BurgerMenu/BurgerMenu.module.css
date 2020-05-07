@@ -8,21 +8,35 @@
     z-index: 200;
     background-color: #eee;
     padding: 32px 16px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 .BurgerMenu ul {
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 .BurgerMenu a {
     margin-bottom: 10rem;
 }
 .Open {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
     transform: translateX(0);
 }
 
 .Close {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
     transform: translateX(-100%);
 }
 @media only screen and (min-width: 1251px) {

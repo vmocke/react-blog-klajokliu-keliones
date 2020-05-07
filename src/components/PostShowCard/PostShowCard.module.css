@@ -27,9 +27,18 @@
     max-height: inherit;
 }
 .TicketsPostMainHeader {
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: center;
 }
@@ -45,9 +54,18 @@ span {
 .TicketsPostExtraContent {
     width: 100%;
     padding-top: 40rem;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: justify;
 }
@@ -58,16 +76,29 @@ span {
     margin: 20rem 0 0 0;
 }
 .PostShowExtraContentImgs {
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 @media only screen and (max-width: 700px) {
     .TicketsPostMainContent {
         width: 100%;
+        display: -ms-flexbox;
+        display: -webkit-box;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
     .TicketsPostMainImg {

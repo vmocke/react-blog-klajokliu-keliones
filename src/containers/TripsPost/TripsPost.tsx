@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import classes from './Trips.module.css';
+import classes from './TripsPost.module.css';
 import { useParams, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actionsTrips from '../../store/actions/actionsTrips';

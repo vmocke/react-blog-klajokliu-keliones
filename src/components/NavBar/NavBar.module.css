@@ -2,17 +2,27 @@
     position: relative;
     width: 100%;
     height: 20rem;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-bottom: 5rem;
 }
 .NavBarLinks {
     height: 100%;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 @media only screen and (max-width: 1500px) {
     .NavBar {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
     }
 }

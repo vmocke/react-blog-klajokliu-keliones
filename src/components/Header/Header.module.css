@@ -1,7 +1,13 @@
 .Header {
     height: 90rem;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 .Header h1 {
@@ -11,7 +17,11 @@
     font-family: 'Lexend Giga', sans-serif;
     font-weight: 1;
     font-size: 40rem;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     letter-spacing: 1rem;
 }
@@ -29,6 +39,9 @@
 }
 @media only screen and (max-width: 600px) {
     .Header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         height: 50rem;
     }

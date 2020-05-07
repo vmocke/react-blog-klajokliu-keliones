@@ -2,13 +2,19 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     list-style: none;
 }
 .NavBarList a {
     height: 100%;
     margin: 0 10rem;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     text-decoration: none;
     font-family: 'Lexend Giga', sans-serif;
