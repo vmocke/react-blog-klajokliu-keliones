@@ -2,8 +2,6 @@ import React, { Suspense } from 'react';
 import classes from './App.module.css';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Layout from './hoc/Layout/Layout';
-import withErrorHandler from './hoc/withErrorHandler/withErrorHandler';
-import { blog } from './axios-export';
 
 const Home = React.lazy(() => import('./containers/Home/Home'));
 const Trips = React.lazy(() => import('./containers/Trips/Trips'));
@@ -43,4 +41,4 @@ const App = () => {
     );
 };
 
-export default withErrorHandler(withRouter(App), blog);
+export default withRouter(App);

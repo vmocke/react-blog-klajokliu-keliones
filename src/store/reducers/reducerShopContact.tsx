@@ -46,7 +46,7 @@ const onGetContactDataFail_ = (state: stateTS, action: { error: any }) => {
         error: action.error,
     };
 };
-// GET CONTACT DATA FROM SERVER
+// GET SHOP DATA FROM SERVER
 const onGetShopData_ = (state: stateTS) => {
     return {
         ...state,

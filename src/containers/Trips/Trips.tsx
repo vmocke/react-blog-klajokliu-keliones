@@ -8,7 +8,7 @@ import { useParams, useHistory, useRouteMatch } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../..';
 import * as actionsTrips from '../../store/actions/actionsTrips';
-import { redirecting } from '../../shared/utility';
+import { redirecting, getLastPageLastPostDate } from '../../shared/utility';
 
 const Trips = () => {
     const { url } = useRouteMatch();
@@ -36,15 +36,7 @@ const Trips = () => {
         tripsPageArr = [...tripsPageArr].concat([tempArr]);
     }
     // GETTING LAST POST DATE
-    const lastPostDate: {}[] = [];
-    if (trips.length > 0 && tripsPageArr.length > 0) {
-        const lastPageArr = tripsPageArr[tripsPageArr.length - 1];
-        const lastPagePostDate = lastPageArr[lastPageArr.length - 1].date;
-        lastPostDate.push(lastPagePostDate);
-    } else if (trips.length > 0 && tripsPageArr.length === 0) {
-        const lastPagePostDate = tripsPageArr[tripsPageArr.length - 1].date;
-        lastPostDate.push(lastPagePostDate);
-    }
+    const lastPostDate: any = trips && getLastPageLastPostDate(trips, postsPerPage);
 
     const onTripsCardClickedHandler = (e: any, id_: string) => {
         e.preventDefault();

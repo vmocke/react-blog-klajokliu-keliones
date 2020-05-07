@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from '../components/UI/Modal/Modal';
 
 export const updateObject = (oldObject: object, updatedProperties: any) => {
     return {
@@ -75,7 +76,7 @@ export const convertTimeFirestore = (itemDate: any) => {
     const minutes = currentDate.getMinutes();
     return `${hours}:${minutes}`;
 };
-// GETTING LAST POST DATE
+// GETTING LAST PAGE LAST POST DATE
 export const getLastPageLastPostDate = (fullItemsArr: any, itemPageArr: any) => {
     const lastPostDate: {}[] = [];
     if (fullItemsArr.length > 0 && itemPageArr.length > 0) {
@@ -90,7 +91,7 @@ export const getLastPageLastPostDate = (fullItemsArr: any, itemPageArr: any) => 
     }
     return lastPostDate;
 };
-
+// GETTING LAST POST DATE
 export const getLastPostDate = (fullItemsArr: any) => {
     const lastPostDate: {}[] = [];
     if (fullItemsArr.length > 0) {
@@ -130,12 +131,12 @@ export const componentDecorator = (href: string, text: string, key: number) => (
 );
 // SHOW ERROR MESSAGE AND REDIRECT TO HOME
 export const redirecting = (error: { message: string }, pushHistory: any, timeDelay: number) => (
-    <React.Fragment>
+    <Modal show={error}>
         <h1>{error.message}</h1>
         {setTimeout(() => {
             if (error) {
                 pushHistory('/home/0');
             }
         }, timeDelay)}
-    </React.Fragment>
+    </Modal>
 );

@@ -4,7 +4,7 @@ import Backdrop from '../Backdrop/Backdrop';
 
 interface ModalProps {
     show: any;
-    modalClosed: any;
+    modalClosed?: any;
     children: any;
 }
 

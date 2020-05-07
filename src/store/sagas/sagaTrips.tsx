@@ -15,6 +15,9 @@ export function* onGetTripsDataSaga() {
             .then((snapshot) => {
                 snapshot.forEach((doc) => trips.push({ ...doc.data() }));
             });
+        if (trips.length === 0) {
+            throw Error('Failed to get document because the client is offline.');
+        }
         yield put(actionsTrips.onGetTripsDataOk(trips));
     } catch (error) {
         yield put(actionsTrips.onGetTripsDataFail(error));

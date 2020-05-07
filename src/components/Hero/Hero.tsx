@@ -4,11 +4,9 @@ import hero1 from '../../assets/heroImg/hero-1.jpg';
 
 const Hero = () => {
     return (
-        <React.Fragment>
-            <div className={classes.Hero}>
-                <img src={hero1} alt="hero" />
-            </div>
-        </React.Fragment>
+        <div className={classes.Hero}>
+            <img src={hero1} alt="hero" />
+        </div>
     );
 };
 

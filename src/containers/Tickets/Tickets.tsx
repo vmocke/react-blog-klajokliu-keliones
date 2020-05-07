@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../..';
 import { useRouteMatch, useParams, useHistory } from 'react-router-dom';
 import PostsPages from '../../components/Home/PostsPages/PostsPages';
-import { redirecting } from '../../shared/utility';
+import { redirecting, getLastPageLastPostDate } from '../../shared/utility';
 
 const Tickets = () => {
     const { url } = useRouteMatch();
@@ -36,16 +36,9 @@ const Tickets = () => {
         const tempArr = ticketsArr.splice(0, postsPerPage);
         ticketsPageArr = [...ticketsPageArr].concat([tempArr]);
     }
-    // GETTING LAST POST DATE
-    const lastPostDate: {}[] = [];
-    if (tickets.length > 0 && ticketsPageArr.length > 0) {
-        const lastPageArr = ticketsPageArr[ticketsPageArr.length - 1];
-        const lastPagePostDate = lastPageArr[lastPageArr.length - 1].date;
-        lastPostDate.push(lastPagePostDate);
-    } else if (tickets.length > 0 && ticketsPageArr.length === 0) {
-        const lastPagePostDate = ticketsPageArr[ticketsPageArr.length - 1].date;
-        lastPostDate.push(lastPagePostDate);
-    }
+    // GETTING LAST PAGE LAST POST DATE
+    const lastPostDate: any = tickets && getLastPageLastPostDate(tickets, ticketsPageArr);
+
     const onTicketsCardClickedHandler = (e: any, id_: string) => {
         e.preventDefault();
         //const linkId = id_.replace(/ /g, '-');
