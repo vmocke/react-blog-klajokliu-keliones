@@ -6,6 +6,7 @@
 }
 .NavBarSearchInput[type='text'] {
     width: 100px;
+    height: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border: 0;
@@ -13,7 +14,7 @@
     font-size: 14rem;
     font-family: 'Lexend Giga', sans-serif;
     background-repeat: no-repeat;
-    padding: 5px 35px 0 0;
+    padding: 5px 19px 0 0;
     -webkit-transition: width 0.4s ease-in;
     -o-transition: width 0.4s ease-in;
     transition: width 0.4s ease-in;
@@ -44,8 +45,6 @@
 .NavBarSearchSvg {
     width: 40px;
     position: absolute;
-    right: 0;
+    right: -8px;
     cursor: pointer;
-}
-@media only screen and (max-width: 990px) {
 }
