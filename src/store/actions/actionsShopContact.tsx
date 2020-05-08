@@ -37,3 +37,21 @@ export const onGetShopDataFail = (error: any) => {
         error: error,
     };
 };
+// ON SHOP FORM SEND HANDLER
+export const onShopFormSend = (reqForm: {}) => {
+    return {
+        type: actionTypes.SEND_SHOP_FORM_TO_SERVER_SAGA,
+        reqForm: reqForm,
+    };
+};
+export const onShopFormSendOk = () => {
+    return {
+        type: actionTypes.SEND_SHOP_FORM_TO_SERVER_OK,
+    };
+};
+export const onShopFormSendFail = (err: any) => {
+    return {
+        type: actionTypes.SEND_SHOP_FORM_TO_SERVER_FAIL,
+        err: err,
+    };
+};

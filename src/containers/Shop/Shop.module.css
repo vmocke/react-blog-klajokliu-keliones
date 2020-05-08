@@ -19,14 +19,14 @@
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    margin: 30rem 0;
+    margin: 30px 0;
 }
 .ShopWater {
     position: absolute;
     bottom: 0;
     right: 32%;
-    width: 100rem;
-    height: 50rem;
+    width: 100px;
+    height: 50px;
 }
 .ShopWater img {
     height: inherit;
@@ -34,13 +34,13 @@
 }
 @media only screen and (max-width: 600px) {
     .ShopWater {
-        width: 50rem;
-        height: 25rem;
+        width: 50px;
+        height: 25px;
         right: 33%;
     }
 }
 @media only screen and (max-width: 500px) {
     .ShopImgs {
-        margin-top: 20rem;
+        margin-top: 20px;
     }
 }

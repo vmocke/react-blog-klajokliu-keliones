@@ -1,6 +1,6 @@
 import { takeEvery, all, takeLatest } from 'redux-saga/effects';
 import * as actionTypes from '../actions/actionTypes';
-import { onGetContactDataSaga, onGetShopDataSaga } from './sagaShopContact';
+import { onGetContactDataSaga, onGetShopDataSaga, onShopFormSend } from './sagaShopContact';
 import {
     onGetTicketsDataSaga,
     onTicektsPostServerSearchSaga,
@@ -19,6 +19,7 @@ export function* watchShopContact() {
     yield all([
         takeLatest(actionTypes.GET_CONTACT_DATA_SAGA, onGetContactDataSaga),
         takeLatest(actionTypes.GET_SHOP_DATA_SAGA, onGetShopDataSaga),
+        takeLatest(actionTypes.SEND_SHOP_FORM_TO_SERVER_SAGA, onShopFormSend),
     ]);
 }
 export function* watchTickets() {

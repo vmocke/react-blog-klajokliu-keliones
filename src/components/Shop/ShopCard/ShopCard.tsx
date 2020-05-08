@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import classes from './ShopCard.module.css';
 import Input from '../../UI/Forms/Input/Input';
 import { checkInputValidation } from '../../../shared/utility';
+import { useDispatch } from 'react-redux';
+import * as actionsShopContact from '../../../store/actions/actionsShopContact';
 
 interface ShopCard {
     id: string;
@@ -56,6 +58,8 @@ const ShopCard = (props: ShopCard) => {
     });
     const [isFormValid, setIsFormValid] = useState(false);
     const [buttonCliked, setButtonCliked] = useState(false);
+    const dispatch = useDispatch();
+    const on_Shop_Form_Send_Handler = (reqForm: {}) => dispatch(actionsShopContact.onShopFormSend(reqForm));
 
     const checkFormValidation = (errForm: {}, reqForm_: {}) => {
         // cheking if have input errors
@@ -70,13 +74,14 @@ const ShopCard = (props: ShopCard) => {
         // cheking if no err and all form filled
         if (errValidation.length === 0 && formValidation.length === 0) {
             setIsFormValid(true);
-            // cia dar galbut kazakaip pakoreguoti issiunciama info pagal serveri ar pan
             const sendReqFormData = { id: props.id };
+            // cia dar galbut kazakaip pakoreguoti issiunciama info pagal serveri ar pan
             for (let key in reqForm) {
                 Object.assign(sendReqFormData, { [key]: reqForm[key].value });
             }
+            return sendReqFormData;
         } else {
-            console.error('INVALID FORM');
+            return console.error('INVALID FORM');
         }
     };
 
@@ -92,13 +97,15 @@ const ShopCard = (props: ShopCard) => {
 
     const onFormSubmitHandler = (e: any) => {
         e.preventDefault();
-        checkFormValidation(reqFormErrors, reqForm);
+        const readyForm = checkFormValidation(reqFormErrors, reqForm);
+
         setButtonCliked(true);
         setTimeout(() => {
             setButtonCliked(false);
             setIsFormValid(false);
         }, 2000);
-        // NEED TO SEND CLIENT INFORMATION TO A SERVER
+        // ON SHOP FORM SEND HANDLER
+        readyForm && on_Shop_Form_Send_Handler(readyForm);
     };
 
     const reqFormArr = [];

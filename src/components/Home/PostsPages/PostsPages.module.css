@@ -13,7 +13,7 @@
     padding: 0;
 }
 .PostsPagesSpan {
-    margin-left: 10rem;
+    margin-left: 10px;
 }
 .PostsPagesLI {
     display: -ms-flexbox;
@@ -22,7 +22,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-left: 10rem;
+    margin-left: 10px;
     cursor: pointer;
 }
 .PostsPagesLI:hover {

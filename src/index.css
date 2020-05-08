@@ -8,6 +8,10 @@ body {
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-box-direction: normal;
     -webkit-box-direction: normal;
     -ms-flex-flow: column nowrap;
     flex-flow: column nowrap;

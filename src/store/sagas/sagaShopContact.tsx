@@ -11,7 +11,7 @@ import shopMap from '../../assets/img/shopImg/shopMap.png';
 const db = firebase.firestore();
 const shopRef = db.collection('pageData').doc('shop');
 const contactRef = db.doc('pageData/contact');
-
+// GET CONTACT DATA FROM SERVER
 export function* onGetContactDataSaga() {
     try {
         const res = yield contactRef.get().then((doc) => doc.data());
@@ -25,7 +25,7 @@ export function* onGetContactDataSaga() {
         yield put(actionsShopContact.onGetContactDataFail(err));
     }
 }
-
+// GET SHOP DATA FROM SERVER
 export function* onGetShopDataSaga() {
     try {
         const res = yield shopRef.get().then((doc) => doc.data());
@@ -61,5 +61,55 @@ export function* onGetShopDataSaga() {
         yield put(actionsShopContact.onGetShopDataOk(headerImgs, content));
     } catch (err) {
         yield put(actionsShopContact.onGetShopDataFail(err));
+    }
+}
+// ON SHOP FORM SEND HANDLER
+export function* onShopFormSend(reqForm: {
+    type: string;
+    reqForm: { id: string; name: string; email: string; textarea: string };
+}) {
+    const reqForm_: { id: string; name: string; email: string; textarea: string } = reqForm.reqForm;
+    try {
+        switch (reqForm_.id) {
+            case 'Žemėlapio sudarymas':
+                yield db
+                    .collection('shopReceivedEmails')
+                    .doc(reqForm_.email)
+                    .update({
+                        zemelapioSudarymas: {
+                            name: reqForm_.name,
+                            textarea: reqForm_.textarea,
+                            date: firebase.firestore.FieldValue.serverTimestamp(),
+                        },
+                    });
+                break;
+            case 'Pigių bilietų suradimas':
+                yield db
+                    .collection('shopReceivedEmails')
+                    .doc(reqForm_.email)
+                    .update({
+                        pigiuBilietuSuradimas: {
+                            name: reqForm_.name,
+                            textarea: reqForm_.textarea,
+                        },
+                    });
+                break;
+            case 'Paketo sudarymas':
+                yield db
+                    .collection('shopReceivedEmails')
+                    .doc(reqForm_.email)
+                    .update({
+                        paketoSudarymas: {
+                            name: reqForm_.name,
+                            textarea: reqForm_.textarea,
+                        },
+                    });
+                break;
+            default:
+                break;
+        }
+        yield put(actionsShopContact.onShopFormSendOk());
+    } catch (error) {
+        yield put(actionsShopContact.onShopFormSendFail(error.message));
     }
 }

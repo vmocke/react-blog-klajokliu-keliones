@@ -16,7 +16,7 @@
 }
 .Contact {
     height: 100%;
-    max-width: 800rem;
+    max-width: 800px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -29,9 +29,9 @@
     align-items: center;
 }
 .ContactInfo {
-    width: 800rem;
-    height: 600rem;
-    margin-top: 30rem;
+    width: 800px;
+    height: 600px;
+    margin-top: 30px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -46,20 +46,20 @@
     -ms-flex-align: center;
     align-items: center;
     text-transform: uppercase;
-    -webkit-box-shadow: 0 0.8rem 5rem 4rem rgba(101, 90, 86, 0.245);
-    box-shadow: 0 0.8rem 5rem 4rem rgba(101, 90, 86, 0.245);
+    -webkit-box-shadow: 0 0.8px 5px 4px rgba(101, 90, 86, 0.245);
+    box-shadow: 0 0.8px 5px 4px rgba(101, 90, 86, 0.245);
 }
 .ContactInfoHeader {
-    max-width: 250rem;
+    max-width: 250px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     -ms-flex-item-align: start;
     align-self: flex-start;
-    margin-left: 50rem;
+    margin-left: 50px;
 }
 .ContactInfoHeaderDesc {
-    max-width: 500rem;
+    max-width: 500px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -72,7 +72,7 @@
     align-items: center;
     -ms-flex-item-align: end;
     align-self: flex-end;
-    margin-right: 50rem;
+    margin-right: 50px;
 }
 .ContactInfoHeaderDesc a {
     text-decoration: none;
@@ -86,7 +86,7 @@
 h5 {
     margin: 0;
     font-weight: 1;
-    letter-spacing: 2rem;
+    letter-spacing: 2px;
 }
 .ContactImg {
     display: -ms-flexbox;
@@ -95,7 +95,7 @@ h5 {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    height: 400rem;
+    height: 400px;
     width: 100%;
 }
 .ContactImg img {
@@ -104,7 +104,7 @@ h5 {
 }
 @media only screen and (max-width: 815px) {
     .ContactInfo {
-        width: 550rem;
+        width: 550px;
     }
 }
 @media only screen and (max-width: 500px) {
@@ -117,10 +117,10 @@ h5 {
     }
     .ContactInfo {
         width: 100%;
-        margin-top: 20rem;
-        height: 450rem;
+        margin-top: 20px;
+        height: 450px;
     }
     .ContactImg {
-        height: 200rem;
+        height: 200px;
     }
 }

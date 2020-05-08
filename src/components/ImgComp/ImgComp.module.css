@@ -1,8 +1,8 @@
 .ImgComp {
     position: relative;
-    max-height: 300rem;
-    max-width: 200rem;
-    margin: 0 30rem;
+    max-height: 300px;
+    max-width: 200px;
+    margin: 0 30px;
 }
 .ImgComp img {
     height: 100%;

@@ -1,5 +1,5 @@
 .Header {
-    height: 90rem;
+    height: 90px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -12,7 +12,7 @@
 }
 .Header h1 {
     margin: 0;
-    padding: 10rem 0;
+    padding: 10px 0;
     text-transform: uppercase;
     font-family: 'Lexend Giga', sans-serif;
     font-weight: 1;
@@ -23,12 +23,12 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    letter-spacing: 1rem;
+    letter-spacing: 1px;
 }
 .Header span {
-    height: 9rem;
-    width: 9rem;
-    margin: 0 10rem;
+    height: 9px;
+    width: 9px;
+    margin: 0 10px;
     background-color: black;
     border-radius: 50%;
 }
@@ -43,14 +43,14 @@
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        height: 50rem;
+        height: 50px;
     }
     .Header h1 {
         font-size: calc(8rem + 1vmax);
     }
 
     .Header span {
-        height: calc(1rem + 1vmax);
-        width: calc(1rem + 1vmax);
+        height: calc(1px + 1vmax);
+        width: calc(1px + 1vmax);
     }
 }

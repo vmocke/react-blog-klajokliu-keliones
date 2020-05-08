@@ -9,7 +9,7 @@
 }
 .NavBarList a {
     height: 100%;
-    margin: 0 10rem;
+    margin: 0 10px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;

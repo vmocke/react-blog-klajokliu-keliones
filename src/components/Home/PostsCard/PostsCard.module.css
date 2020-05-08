@@ -1,6 +1,6 @@
 .PostsCard {
-    max-width: 1280rem;
-    max-height: 400rem;
+    max-width: 1280px;
+    max-height: 400px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -11,7 +11,7 @@
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
-    margin: 30rem 0;
+    margin: 30px 0;
 }
 .PostsDesc {
     width: 100%;
@@ -29,23 +29,23 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-right: 80rem;
+    margin-right: 80px;
     font-weight: 100;
     font-size: calc(8rem + 1vmin);
 }
 .PostsDesc h2 {
     margin: 0;
-    margin-bottom: 10rem;
+    margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 3rem;
-    border-bottom: 1rem solid black;
+    letter-spacing: 3px;
+    border-bottom: 1px solid black;
     font-weight: 400;
 }
 .PostsDesc span {
-    letter-spacing: 1rem;
+    letter-spacing: 1px;
 }
 .PostsDesc p {
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.2px;
     line-height: 2;
 }
 .PostsDesc a {
@@ -59,11 +59,11 @@
     text-decoration: none;
     border: 0 solid #eee;
     color: black;
-    padding: 10rem 45rem;
-    margin-top: 30rem;
-    letter-spacing: 2rem;
-    -webkit-box-shadow: 0 0.8rem 5rem 2rem rgba(101, 90, 86, 0.245);
-    box-shadow: 0 0.8rem 5rem 2rem rgba(101, 90, 86, 0.245);
+    padding: 10px 45px;
+    margin-top: 30px;
+    letter-spacing: 2px;
+    -webkit-box-shadow: 0 0.8px 5px 2px rgba(101, 90, 86, 0.245);
+    box-shadow: 0 0.8px 5px 2px rgba(101, 90, 86, 0.245);
 }
 .PostsDescRead:hover {
     background: rgb(233, 233, 233);
@@ -71,8 +71,8 @@
 }
 .PostsImg {
     position: relative;
-    max-width: 400rem;
-    max-height: 400rem;
+    max-width: 400px;
+    max-height: 400px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -97,13 +97,13 @@
     }
     .PostsDesc {
         margin: 0;
-        margin-top: 20rem;
+        margin-top: 20px;
     }
     .PostsImg {
-        max-width: 280rem;
+        max-width: 280px;
         max-height: 100%;
     }
     .PostsImg img {
-        height: 400rem;
+        height: 400px;
     }
 }
