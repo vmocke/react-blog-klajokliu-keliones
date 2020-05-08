@@ -75,10 +75,14 @@ const ShopCard = (props: ShopCard) => {
         if (errValidation.length === 0 && formValidation.length === 0) {
             setIsFormValid(true);
             const sendReqFormData = { id: props.id };
+            const resetFormValues: any = {};
             // cia dar galbut kazakaip pakoreguoti issiunciama info pagal serveri ar pan
             for (let key in reqForm) {
                 Object.assign(sendReqFormData, { [key]: reqForm[key].value });
+                // clearing inputs
+                Object.assign(resetFormValues, { [key]: { ...reqForm[key], value: '' } });
             }
+            setReqForm(resetFormValues);
             return sendReqFormData;
         } else {
             return console.error('INVALID FORM');

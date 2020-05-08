@@ -91,6 +91,7 @@ export function* onShopFormSend(reqForm: {
                         pigiuBilietuSuradimas: {
                             name: reqForm_.name,
                             textarea: reqForm_.textarea,
+                            date: firebase.firestore.FieldValue.serverTimestamp(),
                         },
                     });
                 break;
@@ -102,6 +103,7 @@ export function* onShopFormSend(reqForm: {
                         paketoSudarymas: {
                             name: reqForm_.name,
                             textarea: reqForm_.textarea,
+                            date: firebase.firestore.FieldValue.serverTimestamp(),
                         },
                     });
                 break;
